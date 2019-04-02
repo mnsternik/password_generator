@@ -17,7 +17,8 @@
 
 <body>
 
-    <div class="main">
+    <div class="generator">
+
         <h1>Password generator</h1>
         
         <form action="/password_generator/" method="post" onsubmit="return generate(event)">
@@ -40,6 +41,23 @@
         </form>
 
     </div>
+
+    <div class="reader">
+
+        <h2>Password reader</h2>
+
+        <form action="/password_reader/" method="get" onsubmit="return read(event)"> 
+
+            <label for="index_input">Index:</label>
+            <input id="index_input" type="text" name="index_input_field">
+
+            <label for="password_reader">Password:</label>
+            <input id="password_reader" type="text" name="password_reader_field" readonly>
+
+            <input type="submit" value="Read">
+
+        </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="script.js"></script>
