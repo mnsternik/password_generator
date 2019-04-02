@@ -1,78 +1,31 @@
-/*  
-Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... } 
-*/
+function generate(e) {
+    e.preventDefault();
+    
+    let passwordField = document.getElementById('password');
+    let messageField = document.getElementById('message'); 
 
-* {
-  box-sizing: border-box;
-}
+    passwordField.value = generatePassword(); 
+    messageField.value = generateMessage(); 
 
-body {
-  margin: 0; 
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  display: flex;
-  width: 80%;
-  margin: auto;
-  background-color: rgb(250, 248, 248); 
-  
-}
-
-.generator, .reader {
-  display: flex; 
-  flex-direction: column;
-  width: 100%;
-  margin: 3em auto 0 auto;
-}
-
-h1, h2 {
-  margin: 0 auto 2em auto;
-  font-size: 22px;
-}
-
-form {
-  display: flex; 
-  flex-direction: column;
-}
-
-label, input {
-  width: 15em;
-  margin: 0.5em auto;
-}
-
-textarea {
-  width: 20em;
-  height: 6em;
-  margin: 0.5em auto;
-  resize: none;
-}
-
-input[type=submit] {
-  background: rgba(85, 165, 240, 0.726);
-  color: rgb(255, 255, 255);
-  width: 8em;
-  height: 3em;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[name=message_field] {
-  width: 20em;
-  height: 7em;
-}
-
-@media (max-width: 710px) { 
-
-  body {
-    flex-direction: column;
+    return false;
   }
 
+function generatePassword() {
+    let passwordLength = document.getElementById('password_length').value; 
+ 	let password = ""; 
+  
+    for (let i = 0; i < passwordLength; i++) {
+  	    password += String.fromCharCode(Math.round(Math.random() * 89) + 33);
+    }
+  
+    return password; 
+}
+
+function getPasswordIndex() {
+    return "99999"
+}
+
+function generateMessage() {
+    let message = `Password has been generated. Contact HelpDesk and ask for password number: ${getPasswordIndex()}. Remember to change password to your own!`
+    return message; 
 }
