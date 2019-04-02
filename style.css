@@ -18,17 +18,22 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  
 }
 
-.main {
+.generator, .reader {
   display: flex; 
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   margin: 3em auto 0 auto;
 }
 
-h1 {
-  margin: auto;
+h1, h2 {
+  margin: 0 auto;
+  font-size: 22px;
 }
 
 form {
@@ -61,4 +66,12 @@ input[type=submit] {
 input[name=message_field] {
   width: 20em;
   height: 7em;
+}
+
+@media (max-width: 710px) { 
+
+  body {
+    flex-direction: column;
+  }
+
 }
