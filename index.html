@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Password generator">
+
+    <title>Password generator</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>Password generator</h1>
+        
+        <form action="/password_generator/" method="post" onsubmit="return generate(event)">
+
+            <label for="password_length">Password length:</label>
+            <input id="password_length" type="text" name="password_length_field" value="8">
+
+            <label for="password">Password:</label>
+            <input id="password" type="text" name="password_field" readonly>
+
+            <label for="password_index">Password index:</label>
+            <input id="password_index" type="text" name="password_index_field" readonly>
+
+            <label for="message">Message:</label>
+            <textarea id="message" type="text" name="message_field" readonly></textarea>
+
+
+            <input type="submit" value="Generate">
+
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
