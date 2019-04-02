@@ -1,0 +1,64 @@
+/*  
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } 
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; 
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+.main {
+  display: flex; 
+  flex-direction: column;
+  width: 50%;
+  margin: 3em auto 0 auto;
+}
+
+h1 {
+  margin: auto;
+}
+
+form {
+  display: flex; 
+  flex-direction: column;
+}
+
+label, input {
+  width: 15em;
+  margin: 0.5em auto;
+}
+
+textarea {
+  width: 20em;
+  height: 6em;
+  margin: 0.5em auto;
+  resize: none;
+}
+
+input[type=submit] {
+  background: rgba(85, 165, 240, 0.726);
+  color: rgb(255, 255, 255);
+  width: 8em;
+  height: 3em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[name=message_field] {
+  width: 20em;
+  height: 7em;
+}
