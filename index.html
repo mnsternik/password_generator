@@ -26,14 +26,12 @@
             <label for="password_length">Password length:</label>
             <input id="password_length" type="text" name="password_length_field" value="8">
 
+            <label for="special_characters">Special characters</label>
+            <input type="checkbox" id="special_characters" name="special_characters">
+
             <label for="password">Password:</label>
             <input id="password" type="text" name="password_field" readonly>
 
-            <label for="password_index">Password index:</label>
-            <input id="password_index" type="text" name="password_index_field" readonly>
-
-            <label for="message">Message:</label>
-            <textarea id="message" type="text" name="message_field" readonly></textarea>
 
 
             <input type="submit" value="Generate">
@@ -42,21 +40,6 @@
 
     </div>
 
-    <div class="reader">
-
-        <h2>Password reader</h2>
-
-        <form action="/password_reader/" method="get" onsubmit="return read(event)"> 
-
-            <label for="index_input">Index:</label>
-            <input id="index_input" type="text" name="index_input_field">
-
-            <label for="password_reader">Password:</label>
-            <input id="password_reader" type="text" name="password_reader_field" readonly>
-
-            <input type="submit" value="Read">
-
-        </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
