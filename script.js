@@ -1,31 +1,32 @@
+let specialCharacters = document.getElementById('special_characters'); 
+
 function generate(e) {
     e.preventDefault();
     
     let passwordField = document.getElementById('password');
-    let messageField = document.getElementById('message'); 
 
     passwordField.value = generatePassword(); 
-    messageField.value = generateMessage(); 
 
     return false;
   }
 
 function generatePassword() {
-    let passwordLength = document.getElementById('password_length').value; 
+  let passwordLength = document.getElementById('password_length').value; 
  	let password = ""; 
   
-    for (let i = 0; i < passwordLength; i++) {
-  	    password += String.fromCharCode(Math.round(Math.random() * 89) + 33);
+  if (specialCharacters.checked) {
+      for (let i = 0; i < passwordLength; i++) {
+        password += String.fromCharCode(Math.round(Math.random() * 89) + 33);
     }
-  
+  } else {
+    let nonSpecials = []; 
+    for (let i = 48; i < 58; i++) { nonSpecials.push(i)}
+    for (let i = 65; i < 91; i++) { nonSpecials.push(i)}
+    for (let i = 97; i < 123; i++) { nonSpecials.push(i)}
+    for (let i = 0; i < passwordLength; i++) {
+      password += String.fromCharCode(nonSpecials[Math.round(Math.random() * nonSpecials.length)]);
+    }  
+  }    
     return password; 
 }
 
-function getPasswordIndex() {
-    return "99999"
-}
-
-function generateMessage() {
-    let message = `Password has been generated. Contact your administrator and ask for password with index "${getPasswordIndex()}"`
-    return message; 
-}
