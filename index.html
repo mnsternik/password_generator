@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
 
 <head>
 
@@ -12,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-
 </head>
 
 <body>
@@ -20,29 +18,26 @@
     <div class="generator">
 
         <h1>Password generator</h1>
-        
-        <form action="/password_generator/" method="post" onsubmit="return generate(event)">
 
-            <label for="password_length">Password length:</label>
-            <input id="password_length" type="text" name="password_length_field" value="8">
+        <div class="generator__length">
+            <label>Password length:</label>
+            <input id="password_length" type="text" value="8">
+        </div>
 
-            <label for="special_characters">Special characters</label>
-            <input type="checkbox" id="special_characters" name="special_characters">
+        <div class="generator__special-characters">
+            <label>Special characters:</label>
+            <input type="checkbox" id="special_characters">
+        </div>
 
-            <label for="password">Password:</label>
-            <input id="password" type="text" name="password_field" readonly>
+        <div class="generator__password">
+            <label>Password:</label>
+            <input id="password" type="text" readonly>
+        </div>
 
-
-
-            <input type="submit" value="Generate">
-
-        </form>
+        <button id="generate-btn" class="generator__btn">Generate</button>
 
     </div>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="script.js"></script>
 
 </body>
